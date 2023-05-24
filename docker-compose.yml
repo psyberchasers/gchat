@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+    chatchat:
+        image: chatchat
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        environment:
+            NODE_ENV: production
+                - DATABASE_URL=
+                - NEXTAUTH_URL=
+                - NEXTAUTH_SECRET=
+                - EMAIL_HOST=
+                - EMAIL_PORT=
+                - EMAIL_USERNAME=
+                - EMAIL_PASSWORD=
+                - EMAIL_FROM=
+                - GITHUB_CLIENT_ID=
+                - GITHUB_CLIENT_SECRET=
+                - GOOGLE_CLIENT_ID=
+                - GOOGLE_CLIENT_SECRET=
+        ports:
+            - 3000:3000
